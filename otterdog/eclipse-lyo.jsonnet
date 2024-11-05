@@ -20,7 +20,7 @@ orgs.newOrg('eclipse-lyo') {
   ],
   _repositories+:: [
     orgs.newRepo('lyo') {
-      allow_merge_commit: true,
+      allow_auto_merge: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
