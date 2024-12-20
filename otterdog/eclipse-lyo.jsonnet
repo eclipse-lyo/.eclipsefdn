@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-lyo') {
+orgs.newOrg('technology.lyo', 'eclipse-lyo') {
   settings+: {
     description: "",
     name: "Eclipse Lyo",
