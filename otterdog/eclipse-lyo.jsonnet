@@ -36,16 +36,9 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
         default_workflow_permissions: "write",
       },
       webhooks: [
-        orgs.newRepoWebhook('https://notify.travis-ci.org') {
+        orgs.newRepoWebhook('https://oslc4net-test1-c8g5ged5gxgbcvbg.northeurope-01.azurewebsites.net/api/HttpTrigger1') {
           events+: [
-            "create",
-            "delete",
             "issue_comment",
-            "member",
-            "public",
-            "pull_request",
-            "push",
-            "repository"
           ],
         },
       ],
