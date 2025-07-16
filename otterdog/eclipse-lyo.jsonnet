@@ -37,6 +37,7 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
       },
       webhooks: [
         orgs.newRepoWebhook('https://oslc4net-test1-c8g5ged5gxgbcvbg.northeurope-01.azurewebsites.net/api/HttpTrigger1') {
+          content_type: "json",
           events+: [
             "issue_comment",
           ],
