@@ -365,11 +365,12 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
     },
     orgs.newRepo('lyo.testsuite') {
       allow_merge_commit: true,
-      default_branch: "master",
-      delete_branch_on_merge: false,
+      default_branch: "main",
+      delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
-      description: "Lyo project repository (lyo.testsuite)",
+      description: "Lyo test suite",
       homepage: "",
+      gh_pages_build_type: "workflow",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
