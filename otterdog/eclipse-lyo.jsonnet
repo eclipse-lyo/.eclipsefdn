@@ -390,7 +390,7 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
         },
       ],
       rulesets: [
-        orgs.newRepoRuleset('main') {
+        orgs.newRepoRuleset('merge queue') {
           include_refs+: [
             "~DEFAULT_BRANCH"
           ],
