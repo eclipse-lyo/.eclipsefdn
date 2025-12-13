@@ -370,7 +370,6 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
       dependabot_security_updates_enabled: true,
       description: "Lyo test suite",
       homepage: "",
-      merge_queue: true,
       gh_pages_build_type: "workflow",
       web_commit_signoff_required: false,
       workflows+: {
