@@ -370,6 +370,7 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
       dependabot_security_updates_enabled: true,
       description: "Lyo test suite",
       homepage: "",
+      merge_queue: true,
       gh_pages_build_type: "workflow",
       web_commit_signoff_required: false,
       workflows+: {
@@ -387,6 +388,31 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
             "push",
             "repository"
           ],
+        },
+      ],
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 0,
+          },
+          required_status_checks+: {
+            strict: true,
+            status_checks+: [
+              "Test Suite [OSLC Core 2.0 / CM]"
+            ],
+          },
+          required_merge_queue: orgs.newMergeQueue() {
+            merge_method: "MERGE",
+            build_concurrency: 5,
+            min_group_size: 1,
+            max_group_size: 10,
+            wait_time_for_minimum_group_size: 5,
+            status_check_timeout: 60,
+            requires_all_group_entries_to_pass_required_checks: true,
+          }
         },
       ],
     },
