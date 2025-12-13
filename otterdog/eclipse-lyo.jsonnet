@@ -404,7 +404,7 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
             ],
           },
           required_merge_queue: orgs.newMergeQueue() {
-            merge_method: "MERGE",
+            merge_method: "SQUASH",
             build_concurrency: 5,
             min_group_size: 1,
             max_group_size: 10,
