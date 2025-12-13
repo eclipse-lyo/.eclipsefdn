@@ -274,6 +274,31 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      rulesets: [
+        orgs.newRepoRuleset('main') {
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 0,
+          },
+          required_status_checks+: {
+            strict: true,
+            status_checks+: [
+              "CI / build (18, true)"
+            ],
+          },
+          required_merge_queue: orgs.newMergeQueue() {
+            merge_method: "SQUASH",
+            build_concurrency: 5,
+            min_group_size: 1,
+            max_group_size: 10,
+            wait_time_for_minimum_group_size: 5,
+            status_check_timeout: 60,
+            requires_all_group_entries_to_pass_required_checks: true,
+          }
+        },
+      ],
     },
     orgs.newRepo('lyo.rio') {
       allow_merge_commit: true,
