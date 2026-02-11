@@ -425,7 +425,7 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
           required_status_checks+: {
             strict: true,
             status_checks+: [
-              "Test Suite [OSLC Core 2.0 / CM] / build (21) (pull_request)"
+              "Test Suite [OSLC Core 2.0 / CM] / build (21)"
             ],
           },
           required_merge_queue: orgs.newMergeQueue() {
