@@ -419,13 +419,17 @@ orgs.newOrg('technology.lyo', 'eclipse-lyo') {
           include_refs+: [
             "~DEFAULT_BRANCH"
           ],
+          bypass_actors+: [
+            "@eclipse-lyo/technology-lyo-project-leads",
+          ],
+          allows_creations: true,
           required_pull_request+: {
             required_approving_review_count: 0,
           },
           required_status_checks+: {
             strict: true,
             status_checks+: [
-              "Test Suite [OSLC Core 2.0 / CM] / build (21)"
+              "build (21)"
             ],
           },
           required_merge_queue: orgs.newMergeQueue() {
